@@ -28,3 +28,17 @@ dropdownButtons.forEach((button) => {
     dropdown.classList.toggle("show");
   });
 });
+
+function showMobileMenu() {
+  nav.classList.add("active");
+  overlay.classList.add("active");
+}
+
+function hideMobileMenu() {
+  nav.classList.remove("active");
+  overlay.classList.remove("active");
+}
+
+openMenu.addEventListener("click", showMobileMenu);
+closeMenu.addEventListener("click", hideMobileMenu);
+overlay.addEventListener("click", hideMobileMenu);
