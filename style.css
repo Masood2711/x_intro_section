@@ -54,6 +54,10 @@
   .nav-link {
     position: relative;
   }
+
+  .nav-link.link-open > .dropdown-list {
+    display: flex;
+  }
   
   /* Navigation buttons */
   .dropdown-toggle {

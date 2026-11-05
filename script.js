@@ -21,7 +21,10 @@ const dropdownButtons = document.querySelectorAll(".dropdown-toggle");
 
 dropdownButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    const navLink = button.closest(".nav-link");
     const dropdown = button.nextElementSibling;
+
+    navLink.classList.toggle("link-open");
     dropdown.classList.toggle("show");
   });
 });
