@@ -38,10 +38,13 @@
   
   /* Navigation */
   .nav {
+    /* keep the other existing .nav properties */
+    z-index: 10;
+  }
+
+  .nav.active {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
+    z-index: 20;
   }
   
   /* Navigation links */
@@ -277,7 +280,10 @@
     .overlay.active {
       display: block;
       position: fixed;
-      inset: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 35%;
       background: rgba(0, 0, 0, 0.5);
       z-index: 15;
     }
