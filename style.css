@@ -39,7 +39,7 @@
   /* Navigation */
   .nav {
     /* keep the other existing .nav properties */
-    z-index: 10;
+    z-index: 20;
   }
 
   .nav.active {
