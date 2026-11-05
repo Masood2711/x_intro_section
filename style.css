@@ -32,21 +32,18 @@ ul {
 
 /* Logo */
 .logo img {
-  width: 84px;
   display: block;
+  width: 84px;
 }
 
 /* Navigation */
 .nav {
-  z-index: 1000;
-}
-
-.nav.active {
   display: flex;
-  z-index: 1000;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
 }
 
-/* Navigation links */
 .nav-list {
   display: flex;
   align-items: center;
@@ -81,15 +78,19 @@ ul {
   position: absolute;
   top: 35px;
   left: 0;
+  z-index: 10;
+  display: none;
+  flex-direction: column;
+  gap: 18px;
   min-width: 150px;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
-  display: none;
-  flex-direction: column;
-  gap: 18px;
-  z-index: 10;
+}
+
+.dropdown-list.show {
+  display: flex;
 }
 
 /* Dropdown items */
@@ -103,16 +104,12 @@ ul {
   color: #151515;
 }
 
-/* Show dropdown when JavaScript adds this class */
-.dropdown-list.show {
-  display: flex;
-}
-
 /* Login and Register */
 .registration {
   display: flex;
   align-items: center;
   gap: 35px;
+  margin-left: auto;
 }
 
 .registration button {
@@ -134,7 +131,7 @@ ul {
   border-radius: 14px;
 }
 
-/* Mobile menu controls and overlay are hidden on desktop */
+/* Mobile controls and overlay are hidden on desktop */
 .open-menu,
 .close-menu,
 .overlay {
@@ -217,15 +214,14 @@ ul {
 /* Mobile layout */
 @media (max-width: 767px) {
   .header {
-    position: static;
+    position: relative;
     z-index: auto;
+    padding: 25px 20px;
+    gap: 0;
   }
 
   .open-menu {
     display: block;
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
     margin-left: auto;
     background: transparent;
     border: none;
@@ -238,15 +234,15 @@ ul {
     position: fixed;
     top: 0;
     right: 0;
+    z-index: 1001;
     width: 65%;
     height: 100vh;
-    background: white;
     padding: 80px 25px 25px;
+    background: white;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
     gap: 35px;
-    z-index: 1000;
   }
 
   .nav.active {
@@ -255,9 +251,6 @@ ul {
 
   .close-menu {
     display: block;
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -274,22 +267,29 @@ ul {
     gap: 25px;
   }
 
+  .registration {
+    margin-left: 0;
+  }
+
   .dropdown-list {
     position: static;
     box-shadow: none;
     padding: 20px 0 0 20px;
   }
 
-  /* Overlay is hidden until the mobile menu opens */
+  /* Overlay covers the page area outside the side menu */
   .overlay {
     display: block;
     position: fixed;
-    inset: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 65%;
+    z-index: 1000;
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    z-index: 999;
     transition: opacity 0.3s ease;
   }
 
