@@ -38,12 +38,12 @@ ul {
 
 /* Navigation */
 .nav {
-  z-index: 20;
+  z-index: 1000;
 }
 
 .nav.active {
   display: flex;
-  z-index: 20;
+  z-index: 1000;
 }
 
 /* Navigation links */
@@ -217,7 +217,7 @@ ul {
 /* Mobile layout */
 @media (max-width: 767px) {
   .header {
-    position: relative;
+    position: static;
     z-index: auto;
   }
 
@@ -246,7 +246,7 @@ ul {
     align-items: stretch;
     justify-content: flex-start;
     gap: 35px;
-    z-index: 20;
+    z-index: 1000;
   }
 
   .nav.active {
@@ -280,7 +280,7 @@ ul {
     padding: 20px 0 0 20px;
   }
 
-  /* Overlay is present but hidden until the menu opens */
+  /* Overlay is hidden until the mobile menu opens */
   .overlay {
     display: block;
     position: fixed;
@@ -289,7 +289,7 @@ ul {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    z-index: 15;
+    z-index: 999;
     transition: opacity 0.3s ease;
   }
 
