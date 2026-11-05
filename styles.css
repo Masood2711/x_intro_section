@@ -1,0 +1,317 @@
+/* Reset browser default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fafafa;
+    color: #151515;
+  }
+  
+  /* Remove default link styling */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Remove default list styling */
+  ul {
+    list-style: none;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 25px 40px;
+  }
+  
+  /* Logo */
+  .logo img {
+    width: 84px;
+    display: block;
+  }
+  
+  /* Navigation */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+  }
+  
+  /* Navigation links */
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .nav-link {
+    position: relative;
+  }
+  
+  /* Navigation buttons */
+  .dropdown-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: #696969;
+  }
+  
+  /* Navigation hover effect */
+  .nav-link > a:hover,
+  .dropdown-toggle:hover {
+    color: #151515;
+  }
+  
+  /* Dropdown menu */
+  .dropdown-list {
+    position: absolute;
+    top: 35px;
+    left: 0;
+  
+    min-width: 150px;
+    padding: 20px;
+  
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+  
+    display: none;
+    flex-direction: column;
+    gap: 18px;
+  
+    z-index: 10;
+  }
+  
+  /* Dropdown items */
+  .dropdown-link a {
+    display: block;
+    font-size: 14px;
+    color: #696969;
+  }
+  
+  .dropdown-link a:hover {
+    color: #151515;
+  }
+  
+  /* Show dropdown when JavaScript adds this class */
+  .dropdown-list.show {
+    display: flex;
+  }
+  
+  /* Login and Register */
+  .registration {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+  }
+  
+  .registration button {
+    background: transparent;
+    border: none;
+    color: #696969;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .registration button:hover {
+    color: #151515;
+  }
+  
+  /* Register button border */
+  .registration button:last-child {
+    border: 1px solid #696969;
+    padding: 12px 20px;
+    border-radius: 14px;
+  }
+  
+  /* Mobile menu buttons are hidden on desktop */
+  .open-menu,
+  .close-menu,
+  .overlay {
+    display: none;
+  }
+
+  /* Hero section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 30px;
+  }
+  
+  .text-content {
+    max-width: 500px;
+  }
+  
+  .text-content h1 {
+    font-size: 70px;
+    line-height: 1.05;
+    margin-bottom: 35px;
+  }
+  
+  .text-content p {
+    color: #696969;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+  }
+  
+  .learn-more {
+    display: inline-block;
+    background: #151515;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+  }
+  
+  .learn-more:hover {
+    background: transparent;
+    color: #151515;
+    outline: 1px solid #151515;
+  }
+  
+  .hero-image {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+  }
+  
+  .clients {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 60px;
+  }
+  
+  .clients img {
+    width: 100%;
+    max-width: 90px;
+  }
+  
+  /* Footer */
+  .attribution {
+    text-align: center;
+    font-size: 12px;
+    margin: 40px 15px 20px;
+  }
+  
+  .attribution a {
+    color: #696969;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 767px) {
+    .header {
+      justify-content: space-between;
+      padding: 20px;
+      gap: 20px;
+    }
+  
+    .open-menu {
+      display: block;
+      background: transparent;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+  
+    .nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 65%;
+      height: 100vh;
+      background: white;
+      padding: 80px 25px 25px;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 35px;
+      z-index: 20;
+    }
+  
+    .nav.active {
+      display: flex;
+    }
+  
+    .close-menu {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+  
+    .nav-list,
+    .registration {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 25px;
+    }
+  
+    .dropdown-list {
+      position: static;
+      box-shadow: none;
+      padding: 20px 0 0 20px;
+    }
+  
+    .overlay.active {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 15;
+    }
+  
+    .hero {
+      flex-direction: column-reverse;
+      gap: 35px;
+      margin: 20px auto;
+      padding: 0;
+      text-align: center;
+    }
+  
+    .hero-image {
+      max-width: 100%;
+    }
+  
+    .text-content {
+      padding: 0 20px;
+    }
+  
+    .text-content h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+  
+    .text-content p {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+  
+    .clients {
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 40px;
+    }
+  
+    .clients img {
+      max-width: 65px;
+    }
+  }
