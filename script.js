@@ -1,22 +1,23 @@
+// Mobile menu
 const openMenu = document.querySelector(".open-menu");
 const closeMenu = document.querySelector(".close-menu");
 const nav = document.querySelector(".nav");
 const overlay = document.querySelector(".overlay");
+
+function hideMobileMenu() {
+  nav.classList.remove("active");
+  overlay.classList.remove("active");
+}
 
 openMenu.addEventListener("click", () => {
   nav.classList.add("active");
   overlay.classList.add("active");
 });
 
-closeMenu.addEventListener("click", closeMobileMenu);
-overlay.addEventListener("click", closeMobileMenu);
+closeMenu.addEventListener("click", hideMobileMenu);
+overlay.addEventListener("click", hideMobileMenu);
 
-function closeMobileMenu() {
-  nav.classList.remove("active");
-  overlay.classList.remove("active");
-}
-
-// Open or close a dropdown when its button is clicked
+// Dropdown menu
 const dropdownButtons = document.querySelectorAll(".dropdown-toggle");
 
 dropdownButtons.forEach((button) => {
@@ -28,21 +29,3 @@ dropdownButtons.forEach((button) => {
     dropdown.classList.toggle("show");
   });
 });
-
-function showMobileMenu() {
-  nav.classList.add("active");
-  overlay.classList.add("active");
-}
-
-function hideMobileMenu() {
-  nav.classList.remove("active");
-  overlay.classList.remove("active");
-}
-
-openMenu?.addEventListener("click", () => {
-  nav?.classList.add("active");
-  overlay?.classList.add("active");
-});
-
-closeMenu?.addEventListener("click", hideMobileMenu);
-overlay?.addEventListener("click", hideMobileMenu);
