@@ -39,6 +39,10 @@ function hideMobileMenu() {
   overlay.classList.remove("active");
 }
 
-openMenu.addEventListener("click", showMobileMenu);
-closeMenu.addEventListener("click", hideMobileMenu);
-overlay.addEventListener("click", hideMobileMenu);
+openMenu?.addEventListener("click", () => {
+  nav?.classList.add("active");
+  overlay?.classList.add("active");
+});
+
+closeMenu?.addEventListener("click", hideMobileMenu);
+overlay?.addEventListener("click", hideMobileMenu);
